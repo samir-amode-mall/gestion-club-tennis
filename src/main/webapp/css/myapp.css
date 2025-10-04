@@ -1,0 +1,39 @@
+/*!
+ * @Author JRD
+ */
+input:not(:valid) {
+    border: solid red;
+}
+
+input:read-only {
+    border: dashed 1px;
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+body {
+    background-image: url("../media/TennisGrassCourt.jpg");
+    background-repeat: repeat;
+}
+
+[data-bs-theme=dark] .my-title {
+    color: var(--bs-light-text-emphasis);
+    background-color: var(--bs-dark);
+    border-radius: var(--bs-border-radius-lg);
+    border-width: 2px;
+    border-color: var(--bs-light);
+}
+
+[data-bs-theme=light] .my-title {
+    color: var(--bs-dark-rgb);
+    background-color: var(--bs-light);
+    border-radius: var(--bs-border-radius-lg);
+    border-width: 2px;
+    border-color: var(--bs-dark);
+}

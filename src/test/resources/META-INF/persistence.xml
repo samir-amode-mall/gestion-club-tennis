@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+    <persistence-unit name="tennis" transaction-type="RESOURCE_LOCAL" >
+        <description>Test Unit</description>
+        <class>fr.ensicaen.tennis.persistence.TodoEntity</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:tennis" />
+            <property name="javax.persistence.jdbc.user" value="tennis" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <property name="show_sql" value="true"/>
+<!--            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>-->
+<!--            <property name="jakarta.persistence.schema-generation.database.action" value="create" />-->
+<!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>-->
+<!--            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql" />-->
+        </properties>
+    </persistence-unit>
+</persistence>
