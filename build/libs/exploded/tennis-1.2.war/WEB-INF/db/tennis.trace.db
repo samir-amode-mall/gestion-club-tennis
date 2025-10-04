@@ -1,0 +1,4 @@
+2025-10-04 22:44:13.091198+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "create global temporary table PUBLIC.tennis[*].HTE_todo(rn_ integer not null, id_todo bigint, description varchar(200), primary key (rn_)) TRANSACTIONAL"
+Syntax error in SQL statement "create global temporary table PUBLIC.tennis[*].HTE_todo(rn_ integer not null, id_todo bigint, description varchar(200), primary key (rn_)) TRANSACTIONAL"; SQL statement:
+create global temporary table PUBLIC.tennis.HTE_todo(rn_ integer not null, id_todo bigint, description varchar(200), primary key (rn_)) TRANSACTIONAL [42000-232]

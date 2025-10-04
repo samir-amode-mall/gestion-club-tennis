@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+    <persistence-unit name="tennis" transaction-type="RESOURCE_LOCAL" >
+        <description>This unit manage Tennis Club data.
+            Member (Adherent), tournament (Tournoi) and registration (Inscription).
+        </description>
+        <class>fr.ensicaen.tennis.bean.Adherent</class>
+        <class>fr.ensicaen.tennis.bean.Tournoi</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <!-- H2 database in file configuration @see Database class -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:file:~/h2/tennis;LOCK_MODE=0;DB_CLOSE_DELAY=0;" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <!-- H2 in memory database configuration -->
+            <!--            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:tennis" />-->
+            <!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+            <!-- H2 general parameters -->
+            <property name="jakarta.persistence.jdbc.user" value="tennis" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+            <property name="jakarta.persistence.lock.timeout" value="200"/>
+            <!--            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />-->
+            <property name="show-sql" value="true" />
+
+            <property name="hibernate.format_sql" value="true" /> <!-- Formate les requêtes SQL pour une meilleure lisibilité -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> <!-- Dialecte H2 -->
+
+            <!--            <property name="hibernate.boot.allow_jdbc_metadata_access" value="false" />-->
+            <!-- In memory database data insertion -->
+            <!-- DON'T DO THIS IN PRODUCTION https://thorben-janssen.com/jpa-persistence-xml/ -->
+            <!--            <property name="jakarta.persistence.schema-generation.database.action" value="create" />-->
+            <!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>-->
+            <!--            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql" />-->
+            <!-- This is not needed if 'create-source' is 'metadata' only -->
+            <!--            <property name="jakarta.persistence.schema-generation.create-source" value="script"/>-->
+            <!--            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/sql/create.sql" />-->
+        </properties>
+    </persistence-unit>
+</persistence>
